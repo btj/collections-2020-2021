@@ -40,6 +40,16 @@ public class HashMap implements Map {
 		return getBucket(key).get(key);
 	}
 	
+	/**
+	 * @post | size() == 0
+	 */
+	public HashMap() {
+		buckets = new Map[10];
+		for (int i = 0; i < buckets.length; i++) {
+			buckets[i] = new ArrayMap();
+		}
+	}
+	
 	public void put(Object key, Object value) {
 		getBucket(key).put(key, value);
 	}
